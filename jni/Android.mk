@@ -125,7 +125,7 @@ LOCAL_SRC_FILES += $(ne10_neon_source)
 endif
 
 LOCAL_MODULE_TAGS := eng
-LOCAL_MODULE := neonIt
+LOCAL_MODULE := lightItUpWithNEON
 
 include $(BUILD_SHARED_LIBRARY)
 
