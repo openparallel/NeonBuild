@@ -118,7 +118,8 @@ LOCAL_SRC_FILES :=  \
 
 LOCAL_LDLIBS    := -lm -llog
 
-LOCAL_CFLAGS += -mfloat-abi=softfp -mfpu=neon -march=armv7 -mthumb
+#If you don't want the compiler to automatically make you code faster and !#parallel remove "-O2 -ftree-vectorize"
+LOCAL_CFLAGS += -mfloat-abi=softfp -mfpu=neon -march=armv7 -mthumb -O2 -ftree-vectorize
 
 ifeq ($(ARCH_ARM_HAVE_NEON),true)
 LOCAL_SRC_FILES += $(ne10_neon_source)
