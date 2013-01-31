@@ -113,13 +113,13 @@ LOCAL_C_INCLUDES :=     $(LOCAL_PATH)/headers/ \
                         $(LOCAL_PATH)/inc 
 
 LOCAL_SRC_FILES :=  \
-    $(ne10_source_files) \
+	$(ne10_source_files) \
 	myTest.c
 
-LOCAL_LDLIBS    := -lm -llog
+LOCAL_LDLIBS    := -lz -lm -llog
 
 #If you don't want the compiler to automatically make you code faster and !#parallel remove "-O2 -ftree-vectorize"
-LOCAL_CFLAGS += -mfloat-abi=softfp -mfpu=neon -march=armv7 -mthumb -O2 -ftree-vectorize
+LOCAL_CFLAGS += -std=c99 -mfloat-abi=softfp -mfpu=neon -march=armv7 -mthumb -O3 -ftree-vectorize
 
 ifeq ($(ARCH_ARM_HAVE_NEON),true)
 LOCAL_SRC_FILES += $(ne10_neon_source)
