@@ -2,6 +2,12 @@
 #include "myTest.h"
 
 JNIEXPORT jstring JNICALL
+	Java_com_example_neonbuild_MainActivity_doAllTheThings(JNIEnv* env, jobject thiz){
+		
+		return (*env)->NewStringUTF(env, "Just ran the tests and stuff");
+}
+
+JNIEXPORT jstring JNICALL
 Java_com_example_neonbuild_MainActivity_stringFromJNI(JNIEnv* env, jobject thiz){
     
     //do a little bit of simple float arithmetric (vector by scalar)
